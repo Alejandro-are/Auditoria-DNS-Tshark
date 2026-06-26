@@ -10,11 +10,13 @@ Este proyecto demuestra un ejercicio práctico de **Análisis de Red** realizado
    ```bash
    sudo tshark -i eth0 -w /tmp/detective.pcap
    ```
+   ![Archivo de Captura Creado](Evidencia-Practica.png)
 
 2. **Filtro de Auditoría:** Aislé únicamente las preguntas de nombres de dominio (DNS) que hizo mi computadora:
    ```bash
    tshark -r /tmp/detective.pcap -Y "dns.flags.response == 0" -T fields -e ip.src -e dns.qry.name | head -n 20
    ```
+   ![Peticiones DNS Detectadas](Evidencia-2.png)
 
 ---
 
